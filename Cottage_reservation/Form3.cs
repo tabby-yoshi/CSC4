@@ -24,18 +24,16 @@ namespace Cottage_reservation
         public string bday;
         public string contact;
 
+        //other pub. variables
+        public bool hasvid = false;
+        public string numOfSalbabida;
+
+
+
+
         private void Form3_Load(object sender, EventArgs e)
         {
             guna2Panel2.Hide();
-
-            //minessage box ko lang dito yung mga public variables na tinype ko sa taas :3,
-            //ginawa ko to para malaman kung nalipat ba papuntang form 3 yung mga info na tinype ko sa form 2 :D
-            MessageBox.Show(name);
-            MessageBox.Show(address);
-            MessageBox.Show(age);
-            MessageBox.Show(bday);
-            MessageBox.Show(contact);
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -103,13 +101,38 @@ namespace Cottage_reservation
         {
             this.Hide();
             MessageBox.Show("Success!");
+
             Form4 f4 = new Form4();
-            f4.Show();
+
+            f4.nname = name;
+            f4.aaddress = address;
+            f4.bbday = bday;
+            f4.aage = age;
+            f4.ccontact = contact;
+
+            f4.members = guna2NumericUpDown1.Value.ToString();
+            f4.reservationDate = guna2DateTimePicker1.Value;
+            f4.totalCottages = int.Parse(guna2HtmlLabel5.Text);
+            f4.hasVideoke = hasvid;
+            f4.salbabidaQuantity = int.Parse(numOfSalbabida);
+            f4.ShowDialog();
+
+            this.Show();
         }
 
         private void guna2NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            hasvid = true;
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            numOfSalbabida = guna2NumericUpDown2.Value.ToString();
         }
     }
 }
