@@ -19,11 +19,7 @@ namespace Cottage_reservation
             this.Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
-
-
-
-
-
+            this.Show();
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)

@@ -16,24 +16,52 @@ namespace Cottage_reservation
         {
             InitializeComponent();
         }
-        public String name = "";
+
+
+        public string nname;
+        public string aaddress;
+        public string aage;
+        public string bbday;
+        public string ccontact;
+
+        public string members;
+        public DateTime reservationDate;
+        public int totalCottages;
+        public bool hasVideoke;
+        public int salbabidaQuantity;
+
+        int total;
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
-            Form3 f3 = new Form3();
-            f3.Show();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Form5 f5 = new Form5();
-            f5.Show();
+
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            total = (400 * totalCottages) + (100 * salbabidaQuantity);
 
+            if (hasVideoke)
+            {
+                total += 1000;
+            }
+
+            guna2HtmlLabel3.Text = nname;
+            guna2HtmlLabel4.Text = aaddress;
+            guna2HtmlLabel8.Text = ccontact;
+            guna2HtmlLabel10.Text = reservationDate.ToString();
+
+            guna2HtmlLabel12.Text = totalCottages.ToString();
+            guna2HtmlLabel14.Text = members.ToString();
+            if (hasVideoke) { guna2HtmlLabel18.Text = "Yes"; }
+            else { guna2HtmlLabel18.Text = "No"; }
+            guna2HtmlLabel16.Text = salbabidaQuantity.ToString();
+            guna2HtmlLabel20.Text = "Php" + total.ToString();
         }
     }
 }
