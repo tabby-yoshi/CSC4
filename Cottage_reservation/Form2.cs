@@ -73,12 +73,21 @@ namespace Cottage_reservation
         {
             this.Hide();
             Form3 f3 = new Form3();
-            f3.Name = label1.Text;
-            f3.Show();
+            f3.name = FirstName.Text + " " + " " + Middlename.Text + " " + " " + Surname.Text;
+            f3.address = Address.Text;
+            f3.bday = Birthday.Text;
+            f3.age = txtAge.Text;
+            f3.contact = Contact.Text;
+            f3.ShowDialog();
 
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PreviewPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

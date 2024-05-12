@@ -17,6 +17,12 @@ namespace Cottage_reservation
             InitializeComponent();
         }
 
+        public string name;
+        public string address;
+        public string age;
+        public string bday;
+        public string contact;
+
         private void Form3_Load(object sender, EventArgs e)
         {
             guna2Panel2.Hide();
