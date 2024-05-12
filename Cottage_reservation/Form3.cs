@@ -17,9 +17,24 @@ namespace Cottage_reservation
             InitializeComponent();
         }
 
+        //nasa form 3 tayo, eto yung mga public variables na i aaccess naten sa form2.
+        public string name;
+        public string address;
+        public string age;
+        public string bday;
+        public string contact;
+
         private void Form3_Load(object sender, EventArgs e)
         {
             guna2Panel2.Hide();
+
+            //minessage box ko lang dito yung mga public variables na tinype ko sa taas :3,
+            //ginawa ko to para malaman kung nalipat ba papuntang form 3 yung mga info na tinype ko sa form 2 :D
+            MessageBox.Show(name);
+            MessageBox.Show(address);
+            MessageBox.Show(age);
+            MessageBox.Show(bday);
+            MessageBox.Show(contact);
 
         }
 

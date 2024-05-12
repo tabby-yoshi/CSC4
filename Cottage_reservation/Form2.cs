@@ -71,14 +71,36 @@ namespace Cottage_reservation
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //nag declare tayo ng Form 3 na ang name is f3
             Form3 f3 = new Form3();
-            f3.Name = label1.Text;
-            f3.Show();
+
+            //dito natin linilipat yung mga tinype natin sa form 2 papuntang form 3(f3) gamit
+            //yung mga public variables na dineclare natin sa form 3
+            f3.name = FirstName.Text + " " + " " + Middlename.Text + " " + " " + Surname.Text;
+            f3.address = Address.Text;
+            f3.bday = Birthday.Text;
+            f3.age = txtAge.Text;
+            f3.contact = Contact.Text;
+
+            //ganto ginawa ko para di na need i end task sa task manager every run
+
+            //i hihide form 2
+            this.Hide();
+
+            //i shoshow form 3
+            f3.ShowDialog();
+
+            //i shoshow ulet form 2 after i close yung form 3
+            this.Show();
 
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PreviewPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
